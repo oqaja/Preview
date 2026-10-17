@@ -15,68 +15,46 @@
   <meta property="og:image" content="assets/img/karya-1.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
   <a class="skip" href="#karya">Langsung ke karya</a>
 
-  <div class="shell">
-
-    <!-- ===================== SIDEBAR ===================== -->
-    <aside class="side">
-      <div class="side-top">
-        <header>
-          <h1 class="side-name">Raka Pratama</h1>
-          <p class="side-role">Video Editor</p>
-        </header>
+  <!-- ===================== HERO (blok warna) ===================== -->
+  <div class="block">
+    <header class="bar wrap">
+      <a class="bar-name" href="#">Raka Pratama</a>
+      <nav aria-label="Navigasi utama">
+        <a href="#karya">Karya</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+    </header>
+    <section class="hero wrap">
+      <h1 class="condensed">Raka Pratama</h1>
+      <p class="hero-role">Video Editor</p>
+      <div class="hero-body">
         <p class="statement">Video editor yang bikin konten short-form ditonton sampai habis. Dua tahun mengedit untuk UMKM dan kreator di Instagram dan YouTube.</p>
-        <p class="status"><span class="dot" aria-hidden="true"></span>Terbuka untuk posisi Video Editor di creative agency, Jakarta</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#kontak">Hubungi saya</a>
-          <a class="btn" href="#tentang">Tentang saya</a>
+        <div class="hero-side">
+          <p class="status"><span class="dot" aria-hidden="true"></span>Terbuka untuk posisi Video Editor di creative agency, Jakarta</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#karya">Lihat karya</a>
+            <a class="btn" href="#kontak">Hubungi saya</a>
+          </div>
         </div>
       </div>
+    </section>
+  </div>
 
-      <div class="side-bottom">
-        <section class="side-block" id="tentang" aria-labelledby="judul-tentang">
-          <h2 id="judul-tentang">Tentang saya</h2>
-          <div class="about-row">
-            <img src="assets/img/foto-profil.jpg" alt="Foto Raka Pratama">
-            <div>
-          <p>Saya mulai mengedit video saat kuliah, lalu dua tahun terakhir bekerja freelance untuk UMKM, kreator, dan brand lokal. Saya paling senang mengerjakan konten yang harus menjelaskan sesuatu dengan cepat tanpa terasa seperti iklan.</p>
-          <p>Sekarang saya ingin bergabung dengan tim kreatif di agency, supaya bisa belajar dari proyek yang lebih besar dan bekerja bareng desainer dan penulis.</p>
-            </div>
-          </div>
-          <ul class="tools" aria-label="Tools dan keahlian">
-            <li>Premiere Pro</li>
-            <li>After Effects</li>
-            <li>DaVinci Resolve</li>
-            <li>CapCut</li>
-            <li>Color grading</li>
-            <li>Sound design</li>
-          </ul>
-        </section>
+  <main>
 
-        <section class="side-block" id="kontak" aria-labelledby="judul-kontak">
-          <h2 id="judul-kontak">Kontak</h2>
-          <a class="contact-email" href="mailto:raka@email.com">raka@email.com</a>
-          <ul class="contact-links">
-            <li><a href="https://wa.me/6281234567890">WhatsApp</a></li>
-            <li><a href="https://www.linkedin.com/in/username">LinkedIn</a></li>
-            <li><a href="https://www.instagram.com/username">Instagram</a></li>
-          </ul>
-        </section>
-
-        <p class="side-foot">© 2026 Raka Pratama</p>
-      </div>
-    </aside>
-
-    <!-- ===================== KARYA ===================== -->
-    <main class="feed" id="karya" aria-labelledby="judul-karya">
-      <div class="feed-head">
-        <h2 id="judul-karya">Karya pilihan</h2>
+    <!-- ===================== KARYA =====================
+      Karya PERTAMA otomatis tampil besar sebagai sorotan. Taruh karya terbaik paling atas. -->
+    <section class="karya wrap" id="karya" aria-labelledby="judul-karya">
+      <div class="section-head">
+        <h2 class="condensed" id="judul-karya">Karya pilihan</h2>
         <div class="filters" role="group" aria-label="Filter karya">
           <button class="chip" aria-pressed="true" data-filter="semua">Semua</button>
           <button class="chip" aria-pressed="false" data-filter="short-form">Short-form</button>
@@ -163,8 +141,47 @@
         </article>
 
       </div>
-    </main>
+    </section>
 
+    <!-- ===================== TENTANG ===================== -->
+    <section class="about wrap" id="tentang" aria-labelledby="judul-tentang">
+      <div>
+        <h2 class="condensed" id="judul-tentang">Tentang saya</h2>
+        <figure class="about-photo">
+          <img src="assets/img/foto-profil.jpg" alt="Foto Raka Pratama" loading="lazy">
+        </figure>
+      </div>
+      <div class="about-text">
+        <p>Saya mulai mengedit video saat kuliah, lalu dua tahun terakhir bekerja freelance untuk UMKM, kreator, dan brand lokal. Saya paling senang mengerjakan konten yang harus menjelaskan sesuatu dengan cepat tanpa terasa seperti iklan.</p>
+        <p>Sekarang saya ingin bergabung dengan tim kreatif di agency, supaya bisa belajar dari proyek yang lebih besar dan bekerja bareng desainer dan penulis.</p>
+        <h3>Tools dan keahlian</h3>
+        <ul class="tools">
+          <li>Premiere Pro</li>
+          <li>After Effects</li>
+          <li>DaVinci Resolve</li>
+          <li>CapCut</li>
+          <li>Color grading</li>
+          <li>Sound design</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== KONTAK (blok warna) ===================== -->
+  <div class="block" id="kontak">
+    <section class="contact wrap" aria-labelledby="judul-kontak">
+      <h2 class="condensed" id="judul-kontak">Mari kerja bareng</h2>
+      <a class="contact-email" href="mailto:raka@email.com">raka@email.com</a>
+      <ul class="contact-links">
+        <li><a href="https://wa.me/6281234567890">WhatsApp</a></li>
+        <li><a href="https://www.linkedin.com/in/username">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/username">Instagram</a></li>
+      </ul>
+      <footer class="foot">
+        <p>© 2026 Raka Pratama</p>
+      </footer>
+    </section>
   </div>
 
   <!-- Jendela untuk menampilkan video, gambar, atau tulisan -->
