@@ -1,0 +1,252 @@
+/* =========================================================
+   DESAIN 2 – SIDEBAR
+   Profil menempel di kiri, karya mengalir di kanan.
+   PENGATURAN: --accent = warna utama. Mode lewat data-theme di index.html.
+   ========================================================= */
+:root,
+[data-theme="terang"] {
+  --bg: #ffffff;
+  --side: #f3f5f2;
+  --surface: #eef1ed;
+  --ink: #1b1d1f;
+  --muted: #5d6460;
+  --line: #d9ded9;
+  --accent: #1f6b4f;
+  --on-accent: #ffffff;
+  --shade: rgba(27, 29, 31, 0.55);
+}
+[data-theme="gelap"] {
+  --bg: #131614;
+  --side: #191d1b;
+  --surface: #202523;
+  --ink: #e8ece9;
+  --muted: #98a19c;
+  --line: #2c332f;
+  --accent: #74d0a6;
+  --on-accent: #10231a;
+  --shade: rgba(0, 0, 0, 0.75);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: minmax(300px, 38%) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+.side {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: clamp(28px, 4vw, 56px) clamp(20px, 3.5vw, 52px);
+  background: var(--side);
+  border-right: 1px solid var(--line);
+}
+.side-name {
+  margin: 0;
+  font-family: "Literata", Georgia, serif;
+  font-size: clamp(2.6rem, 4.6vw, 4.25rem);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.side-role {
+  margin: 10px 0 0;
+  font-family: "Literata", Georgia, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+.statement {
+  margin: 0;
+  max-width: 40ch;
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+.status {
+  display: flex; align-items: baseline; gap: 10px;
+  margin: 0; color: var(--muted); font-size: 0.95rem;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-block; padding: 10px 18px;
+  border: 1px solid var(--ink); border-radius: 4px;
+  text-decoration: none; font-weight: 600; font-size: 0.92rem;
+}
+.btn:hover { background: var(--ink); color: var(--bg); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+
+.side-block h2 {
+  margin: 0 0 10px;
+  font-family: "Literata", Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.side-block p { margin: 0 0 12px; color: var(--muted); max-width: 46ch; }
+.about-row { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 16px; align-items: start; }
+.about-row img { width: 84px; height: 84px; object-fit: cover; border-radius: 50%; }
+.tools { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 0.92rem; }
+.tools li::before { content: "+ "; color: var(--accent); }
+.contact-email {
+  display: inline-block;
+  font-family: "Literata", Georgia, serif;
+  font-size: 1.35rem;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
+}
+.contact-links { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.95rem; }
+.contact-links a { color: var(--muted); }
+.contact-links a:hover { color: var(--ink); }
+.side-foot { margin-top: auto; font-size: 0.85rem; color: var(--muted); }
+
+/* ---------- Feed karya ---------- */
+.feed { padding: clamp(28px, 4vw, 56px) clamp(20px, 4vw, 64px) 80px; min-width: 0; }
+.feed-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 14px 24px; margin-bottom: 36px;
+}
+.feed-head h2 {
+  margin: 0;
+  font-family: "Literata", Georgia, serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 500;
+}
+.works { display: flex; flex-direction: column; gap: clamp(40px, 6vw, 72px); max-width: 860px; }
+.work-open { aspect-ratio: 16 / 9; border-radius: 2px; }
+.work.vertikal .work-open { aspect-ratio: 9 / 13; width: min(100%, 420px); }
+.work.tulisan .work-open {
+  aspect-ratio: auto;
+  min-height: 220px;
+  padding: clamp(24px, 4vw, 48px);
+  text-align: left;
+  border-left: 3px solid var(--accent);
+}
+.excerpt {
+  display: block;
+  font-family: "Literata", Georgia, serif;
+  font-size: clamp(1.3rem, 2.3vw, 1.75rem);
+  line-height: 1.4;
+  max-width: 34ch;
+}
+.work-cap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 20px;
+  padding-top: 14px;
+}
+.work h3 { margin: 0; font-size: 1.08rem; font-weight: 600; line-height: 1.35; }
+.work .tag { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
+.work p { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 0.95rem; max-width: 60ch; }
+
+/* ---------- Responsif ---------- */
+.side-top, .side-bottom { display: flex; flex-direction: column; gap: 28px; }
+.side-bottom { gap: 32px; flex: 1; }
+
+/* HP: profil di atas, karya di tengah, tentang & kontak di bawah */
+@media (max-width: 860px) {
+  .shell { display: flex; flex-direction: column; }
+  .side { display: contents; }
+  .side-top, .side-bottom {
+    padding: 36px max(16px, 5vw);
+    background: var(--side);
+  }
+  .side-top { order: 1; border-bottom: 1px solid var(--line); }
+  .feed { order: 2; padding-left: max(16px, 5vw); padding-right: max(16px, 5vw); }
+  .side-bottom { order: 3; border-top: 1px solid var(--line); }
+}
+
+/* ---------- Dasar bersama (tidak perlu diubah) ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.skip {
+  position: absolute; left: 16px; top: -60px; z-index: 10;
+  padding: 8px 14px; background: var(--accent); color: var(--on-accent);
+}
+.skip:focus { top: 12px; }
+
+.dot {
+  flex: none; width: 9px; height: 9px; border-radius: 50%;
+  background: #2fb36b; transform: translateY(-1px);
+}
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font: inherit; font-size: 0.88rem; padding: 6px 14px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: transparent; color: var(--muted); cursor: pointer;
+}
+.chip:hover { color: var(--ink); border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+
+.work[hidden] { display: none; }
+.work-open {
+  position: relative; display: block; width: 100%; padding: 0; border: 0;
+  font: inherit; color: var(--ink); background: var(--surface);
+  cursor: pointer; overflow: hidden;
+}
+.work-open img { width: 100%; height: 100%; object-fit: cover; }
+
+.play {
+  position: absolute; left: 14px; bottom: 14px;
+  width: 48px; height: 48px; border-radius: 50%; background: var(--accent);
+}
+.play::after {
+  content: ""; position: absolute; left: 19px; top: 15px;
+  border-style: solid; border-width: 9px 0 9px 14px;
+  border-color: transparent transparent transparent var(--on-accent);
+}
+
+.viewer {
+  width: min(960px, calc(100vw - 32px)); max-height: calc(100vh - 32px);
+  padding: 0; border: 0; border-radius: 8px;
+  background: var(--surface); color: var(--ink); overflow: auto;
+}
+.viewer::backdrop { background: var(--shade); }
+.viewer[open] { animation: open 0.25s ease-out; }
+@keyframes open { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.viewer-bar {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 14px 18px; border-bottom: 1px solid var(--line);
+}
+.viewer-bar h2 { margin: 0; font-size: 1.05rem; font-weight: 600; }
+.viewer-close {
+  font: inherit; font-size: 0.9rem; padding: 6px 14px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: transparent; color: var(--ink); cursor: pointer;
+}
+.viewer-body { padding: 18px; }
+.viewer-body iframe, .viewer-body img { width: 100%; border: 0; border-radius: 4px; }
+.viewer-body iframe { aspect-ratio: 16 / 9; height: auto; }
+.viewer-body iframe.vertikal { aspect-ratio: 9 / 16; max-height: 75vh; width: auto; margin: 0 auto; display: block; }
+.viewer-body .text { max-width: 62ch; }
+.viewer-body .text p { margin: 0 0 14px; }
+.viewer-note {
+  padding: 40px 20px; text-align: center; color: var(--muted);
+  border: 1px dashed var(--line); border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

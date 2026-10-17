@@ -1,0 +1,181 @@
+<!doctype html>
+<!--
+  TEMPLATE PORTOFOLIO – PAKET BASIC – DESAIN 2
+  Mode tampilan: ganti data-theme di bawah menjadi "terang" atau "gelap".
+  Paket Basic: maks. 8 karya, tanpa case study.
+-->
+<html lang="id" data-theme="gelap">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raka Pratama · Video Editor</title>
+  <meta name="description" content="Portofolio Raka Pratama, video editor short-form dan YouTube.">
+  <meta property="og:title" content="Raka Pratama · Video Editor">
+  <meta property="og:description" content="Portofolio Raka Pratama, video editor short-form dan YouTube.">
+  <meta property="og:image" content="assets/img/karya-1.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <a class="skip" href="#karya">Langsung ke karya</a>
+
+  <div class="shell">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="side">
+      <div class="side-top">
+        <header>
+          <h1 class="side-name">Raka Pratama</h1>
+          <p class="side-role">Video Editor</p>
+        </header>
+        <p class="statement">Video editor yang bikin konten short-form ditonton sampai habis. Dua tahun mengedit untuk UMKM dan kreator di Instagram dan YouTube.</p>
+        <p class="status"><span class="dot" aria-hidden="true"></span>Terbuka untuk posisi Video Editor di creative agency, Jakarta</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#kontak">Hubungi saya</a>
+          <a class="btn" href="#tentang">Tentang saya</a>
+        </div>
+      </div>
+
+      <div class="side-bottom">
+        <section class="side-block" id="tentang" aria-labelledby="judul-tentang">
+          <h2 id="judul-tentang">Tentang saya</h2>
+          <div class="about-row">
+            <img src="assets/img/foto-profil.jpg" alt="Foto Raka Pratama">
+            <div>
+          <p>Saya mulai mengedit video saat kuliah, lalu dua tahun terakhir bekerja freelance untuk UMKM, kreator, dan brand lokal. Saya paling senang mengerjakan konten yang harus menjelaskan sesuatu dengan cepat tanpa terasa seperti iklan.</p>
+          <p>Sekarang saya ingin bergabung dengan tim kreatif di agency, supaya bisa belajar dari proyek yang lebih besar dan bekerja bareng desainer dan penulis.</p>
+            </div>
+          </div>
+          <ul class="tools" aria-label="Tools dan keahlian">
+            <li>Premiere Pro</li>
+            <li>After Effects</li>
+            <li>DaVinci Resolve</li>
+            <li>CapCut</li>
+            <li>Color grading</li>
+            <li>Sound design</li>
+          </ul>
+        </section>
+
+        <section class="side-block" id="kontak" aria-labelledby="judul-kontak">
+          <h2 id="judul-kontak">Kontak</h2>
+          <a class="contact-email" href="mailto:raka@email.com">raka@email.com</a>
+          <ul class="contact-links">
+            <li><a href="https://wa.me/6281234567890">WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/in/username">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/username">Instagram</a></li>
+          </ul>
+        </section>
+
+        <p class="side-foot">© 2026 Raka Pratama</p>
+      </div>
+    </aside>
+
+    <!-- ===================== KARYA ===================== -->
+    <main class="feed" id="karya" aria-labelledby="judul-karya">
+      <div class="feed-head">
+        <h2 id="judul-karya">Karya pilihan</h2>
+        <div class="filters" role="group" aria-label="Filter karya">
+          <button class="chip" aria-pressed="true" data-filter="semua">Semua</button>
+          <button class="chip" aria-pressed="false" data-filter="short-form">Short-form</button>
+          <button class="chip" aria-pressed="false" data-filter="youtube">YouTube</button>
+          <button class="chip" aria-pressed="false" data-filter="iklan">Iklan</button>
+        </div>
+      </div>
+
+      <!-- Tiap karya = satu <article class="work">. Paket Basic: maks. 8 karya.
+           data-kategori harus sama dengan salah satu tombol filter.
+           data-tipe: "video" | "gambar" | "tulisan". Kelas "vertikal" untuk karya tegak. -->
+      <div class="works">
+
+        <article class="work" data-kategori="youtube" data-tipe="video" data-src="https://www.youtube.com/embed/ID_VIDEO">
+          <button class="work-open" aria-label="Putar video: Review sepatu lari lokal">
+            <img src="assets/img/karya-1.jpg" alt="Review sepatu lari lokal" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <div class="work-cap">
+            <h3>Review sepatu lari lokal</h3>
+            <span class="tag">YouTube</span>
+            <p>YouTube, 12 menit. Retensi rata-rata naik dari 31% ke 48%.</p>
+          </div>
+        </article>
+
+        <article class="work vertikal" data-kategori="short-form" data-tipe="video" data-src="https://www.youtube.com/embed/ID_VIDEO">
+          <button class="work-open" aria-label="Putar video: Reels promo kedai kopi">
+            <img src="assets/img/karya-2.jpg" alt="Reels promo kedai kopi" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <div class="work-cap">
+            <h3>Reels promo kedai kopi</h3>
+            <span class="tag">Short-form</span>
+            <p>Instagram Reels, 28 detik. 180 ribu views dalam seminggu.</p>
+          </div>
+        </article>
+
+        <article class="work" data-kategori="youtube" data-tipe="video" data-src="https://www.youtube.com/embed/ID_VIDEO">
+          <button class="work-open" aria-label="Putar video: Vlog perjalanan Bandung">
+            <img src="assets/img/karya-3.jpg" alt="Vlog perjalanan Bandung" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <div class="work-cap">
+            <h3>Vlog perjalanan Bandung</h3>
+            <span class="tag">YouTube</span>
+            <p>YouTube, 9 menit. Color grading dan sound design.</p>
+          </div>
+        </article>
+
+        <article class="work" data-kategori="iklan" data-tipe="video" data-src="https://www.youtube.com/embed/ID_VIDEO">
+          <button class="work-open" aria-label="Putar video: Iklan skincare 15 detik">
+            <img src="assets/img/karya-4.jpg" alt="Iklan skincare 15 detik" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <div class="work-cap">
+            <h3>Iklan skincare 15 detik</h3>
+            <span class="tag">Iklan</span>
+            <p>Instagram Ads. Dari storyboard sampai final edit.</p>
+          </div>
+        </article>
+
+        <article class="work vertikal" data-kategori="short-form" data-tipe="video" data-src="https://www.youtube.com/embed/ID_VIDEO">
+          <button class="work-open" aria-label="Putar video: TikTok edukasi finansial">
+            <img src="assets/img/karya-5.jpg" alt="TikTok edukasi finansial" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <div class="work-cap">
+            <h3>TikTok edukasi finansial</h3>
+            <span class="tag">Short-form</span>
+            <p>TikTok, 45 detik. Seri 10 video untuk kreator.</p>
+          </div>
+        </article>
+
+        <article class="work" data-kategori="iklan" data-tipe="video" data-src="https://www.youtube.com/embed/ID_VIDEO">
+          <button class="work-open" aria-label="Putar video: Company profile toko roti">
+            <img src="assets/img/karya-6.jpg" alt="Company profile toko roti" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <div class="work-cap">
+            <h3>Company profile toko roti</h3>
+            <span class="tag">Iklan</span>
+            <p>2 menit. Wawancara pemilik dan proses produksi.</p>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Jendela untuk menampilkan video, gambar, atau tulisan -->
+  <dialog class="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-bar">
+      <h2 id="viewer-title"></h2>
+      <button class="viewer-close" aria-label="Tutup">Tutup</button>
+    </div>
+    <div class="viewer-body"></div>
+  </dialog>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
