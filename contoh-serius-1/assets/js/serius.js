@@ -194,6 +194,130 @@
     });
   });
 
+  // ----- Sorotan cahaya mengikuti kursor (Desain 4) -----
+  each('.spot', function (el) {
+    if (!finePointer || calm) { el.classList.add('spot-off'); return; }
+    var area = el.closest('.spot-area') || el;
+    area.addEventListener('mousemove', function (e) {
+      var r = el.getBoundingClientRect();
+      el.style.setProperty('--x', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--y', (e.clientY - r.top) + 'px');
+      el.classList.add('spot-on');
+    });
+    area.addEventListener('mouseleave', function () { el.classList.remove('spot-on'); });
+  });
+
+  // ----- Kata yang berganti otomatis (Desain 4) -----
+  each('.rotate', function (el) {
+    var words = (el.dataset.words || '').split('|').filter(Boolean);
+    if (words.length < 2 || calm) return;
+    var i = 0;
+    setInterval(function () {
+      el.classList.add('out');
+      setTimeout(function () {
+        i = (i + 1) % words.length;
+        el.textContent = words[i];
+        el.classList.remove('out');
+      }, 350);
+    }, 2600);
+  });
+
+  // ----- Case study bercerita saat di-scroll (Desain 4) -----
+  each('.story', function (story) {
+    var steps = story.querySelectorAll('.story-step');
+    var label = story.querySelector('.story-now');
+    var dots = story.querySelectorAll('.story-dot');
+    if (!('IntersectionObserver' in window)) { steps.forEach(function (s) { s.classList.add('active'); }); return; }
+    var sio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        steps.forEach(function (s) { s.classList.toggle('active', s === e.target); });
+        var n = Array.prototype.indexOf.call(steps, e.target);
+        dots.forEach(function (d, k) { d.classList.toggle('on', k <= n); });
+        if (label) label.textContent = e.target.dataset.label || '';
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    steps.forEach(function (s) { sio.observe(s); });
+  });
+
+  // ----- Polaroid yang bisa digeser (Desain 5) -----
+  var z = 10;
+  each('.polaroid', function (card) {
+    var desk = card.parentElement;
+    var dragging = false, ox = 0, oy = 0;
+    card.addEventListener('pointerdown', function (e) {
+      dragging = true;
+      card.setPointerCapture(e.pointerId);
+      var r = card.getBoundingClientRect();
+      ox = e.clientX - r.left; oy = e.clientY - r.top;
+      card.style.zIndex = ++z;
+      card.classList.add('lifted');
+    });
+    card.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var d = desk.getBoundingClientRect();
+      var x = Math.max(-20, Math.min(d.width - card.offsetWidth + 20, e.clientX - d.left - ox));
+      var y = Math.max(-20, Math.min(d.height - card.offsetHeight + 20, e.clientY - d.top - oy));
+      card.style.left = x + 'px'; card.style.top = y + 'px';
+    });
+    function drop() { dragging = false; card.classList.remove('lifted'); }
+    card.addEventListener('pointerup', drop);
+    card.addEventListener('pointercancel', drop);
+  });
+
+  // ----- Animasi susun ulang saat filter (Desain 5) -----
+  each('.flip-grid', function (grid) {
+    var items = grid.querySelectorAll('.work');
+    var before = new Map();
+    document.querySelectorAll('.chip').forEach(function (c) {
+      c.addEventListener('click', function () {
+        items.forEach(function (it) { if (!it.hidden) before.set(it, it.getBoundingClientRect()); });
+        requestAnimationFrame(function () {
+          if (calm) return;
+          items.forEach(function (it) {
+            if (it.hidden || !before.has(it)) return;
+            var a = before.get(it), b = it.getBoundingClientRect();
+            var dx = a.left - b.left, dy = a.top - b.top;
+            if (!dx && !dy) return;
+            it.classList.remove('pop');
+            it.animate([{ transform: 'translate(' + dx + 'px,' + dy + 'px)' }, { transform: 'none' }],
+              { duration: 450, easing: 'cubic-bezier(0.2, 0.7, 0.1, 1)' });
+          });
+          before.clear();
+        });
+      }, true);
+    });
+  });
+
+  // ----- Garis timeline terisi saat di-scroll (Desain 5) -----
+  each('.timeline', function (tl) {
+    function upd() {
+      var r = tl.getBoundingClientRect(), vh = window.innerHeight;
+      var k = Math.min(1, Math.max(0, (vh * 0.6 - r.top) / r.height));
+      tl.style.setProperty('--fill', (k * 100) + '%');
+      tl.querySelectorAll('li').forEach(function (li) {
+        li.classList.toggle('reached', li.getBoundingClientRect().top < vh * 0.6);
+      });
+    }
+    window.addEventListener('scroll', upd, { passive: true });
+    window.addEventListener('resize', upd);
+    upd();
+  });
+
+  // ----- Tombol salin email (Desain 5) -----
+  each('.copy-btn', function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.dataset.copy, label = btn.querySelector('span');
+      function done(ok) {
+        label.textContent = ok ? 'Email tersalin' : 'Salin manual: ' + text;
+        setTimeout(function () { label.textContent = 'Salin email'; }, 2200);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+      } else { done(false); }
+    });
+  });
+
   // ----- Tombol mode terang/gelap (Desain 3) -----
   var tbtn = document.querySelector('.theme-toggle');
   if (tbtn) {
