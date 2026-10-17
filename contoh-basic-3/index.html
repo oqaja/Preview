@@ -1,0 +1,178 @@
+<!doctype html>
+<!--
+  TEMPLATE PORTOFOLIO – PAKET BASIC – DESAIN 3
+  Mode tampilan: ganti data-theme di bawah menjadi "terang" atau "gelap".
+  Paket Basic: maks. 8 karya, tanpa case study.
+-->
+<html lang="id" data-theme="terang">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raka Pratama · Video Editor</title>
+  <meta name="description" content="Portofolio Raka Pratama, video editor short-form dan YouTube.">
+  <meta property="og:title" content="Raka Pratama · Video Editor">
+  <meta property="og:description" content="Portofolio Raka Pratama, video editor short-form dan YouTube.">
+  <meta property="og:image" content="assets/img/karya-1.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..700&family=Unbounded:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <a class="skip" href="#karya">Langsung ke karya</a>
+
+  <header class="bar wrap">
+    <a class="bar-name" href="#">Raka Pratama</a>
+    <nav aria-label="Navigasi utama">
+      <a href="#karya">Karya</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== INTRO ===================== -->
+    <section class="intro wrap">
+      <h1 class="intro-name enter" style="--d:0s">Raka Pratama<span>Video Editor</span></h1>
+      <div class="intro-side enter" style="--d:0.2s">
+        <p class="statement">Video editor yang bikin konten short-form ditonton sampai habis. Dua tahun mengedit untuk UMKM dan kreator di Instagram dan YouTube.</p>
+        <p class="status"><span class="dot" aria-hidden="true"></span>Terbuka untuk posisi Video Editor di creative agency, Jakarta</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#kontak">Hubungi saya</a>
+          <a class="btn" href="#karya">Lihat karya</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KARYA ===================== -->
+    <section class="grid-section wrap" id="karya" aria-labelledby="judul-karya">
+      <div class="grid-head">
+        <h2 id="judul-karya">Karya pilihan</h2>
+        <div class="filters" role="group" aria-label="Filter karya">
+          <button class="chip" aria-pressed="true" data-filter="semua">Semua</button>
+          <button class="chip" aria-pressed="false" data-filter="short-form">Short-form</button>
+          <button class="chip" aria-pressed="false" data-filter="youtube">YouTube</button>
+          <button class="chip" aria-pressed="false" data-filter="iklan">Iklan</button>
+          <button class="chip" aria-pressed="false" data-filter="naskah">Naskah</button>
+        </div>
+      </div>
+
+      <!-- Tiap karya = satu <article class="work">. Paket Basic: maks. 8 karya.
+           data-kategori harus sama dengan salah satu tombol filter.
+           data-tipe: "video" | "gambar" | "tulisan". Kelas "vertikal" untuk karya tegak. -->
+      <div class="works">
+
+        <article class="work" data-kategori="youtube" data-tipe="video" data-src="https://www.youtube.com/embed/ID_VIDEO">
+          <button class="work-open" aria-label="Putar video: Review sepatu lari lokal">
+            <img src="assets/img/karya-1.jpg" alt="Review sepatu lari lokal" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <h3>Review sepatu lari lokal</h3>
+          <p>YouTube, 12 menit. Retensi rata-rata naik dari 31% ke 48%.</p>
+        </article>
+
+        <article class="work vertikal" data-kategori="short-form" data-tipe="video" data-src="https://www.youtube.com/embed/ID_VIDEO">
+          <button class="work-open" aria-label="Putar video: Reels promo kedai kopi">
+            <img src="assets/img/karya-2.jpg" alt="Reels promo kedai kopi" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <h3>Reels promo kedai kopi</h3>
+          <p>Instagram Reels, 28 detik. 180 ribu views dalam seminggu.</p>
+        </article>
+
+        <article class="work" data-kategori="youtube" data-tipe="video" data-src="https://www.youtube.com/embed/ID_VIDEO">
+          <button class="work-open" aria-label="Putar video: Vlog perjalanan Bandung">
+            <img src="assets/img/karya-3.jpg" alt="Vlog perjalanan Bandung" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <h3>Vlog perjalanan Bandung</h3>
+          <p>YouTube, 9 menit. Color grading dan sound design.</p>
+        </article>
+
+        <article class="work" data-kategori="iklan" data-tipe="gambar" data-src="assets/img/karya-4.jpg">
+          <button class="work-open" aria-label="Lihat gambar: Storyboard iklan 15 detik">
+            <img src="assets/img/karya-4.jpg" alt="Storyboard iklan 15 detik" loading="lazy">
+          </button>
+          <h3>Storyboard iklan 15 detik</h3>
+          <p>Perencanaan shot sebelum produksi untuk brand skincare.</p>
+        </article>
+
+        <article class="work vertikal" data-kategori="short-form" data-tipe="video" data-src="https://www.youtube.com/embed/ID_VIDEO">
+          <button class="work-open" aria-label="Putar video: TikTok edukasi finansial">
+            <img src="assets/img/karya-5.jpg" alt="TikTok edukasi finansial" loading="lazy">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <h3>TikTok edukasi finansial</h3>
+          <p>TikTok, 45 detik. Seri 10 video untuk kreator.</p>
+        </article>
+
+        <article class="work tulisan" data-kategori="naskah" data-tipe="tulisan">
+          <button class="work-open" aria-label="Baca tulisan: Naskah iklan 30 detik">
+            <span class="excerpt">“Tiga detik pertama: produk di tangan, bukan logo. Penonton harus tahu apa yang dijual sebelum sempat scroll.”</span>
+          </button>
+          <h3>Naskah iklan 30 detik</h3>
+          <p>Naskah dan shot list untuk iklan brand sepatu lokal.</p>
+          <template>
+            <p><strong>Hook (0–3 detik):</strong> Close-up sepatu dipakai melangkah di aspal basah. Teks: “Hujan bukan alasan.”</p>
+            <p><strong>Isi (3–22 detik):</strong> Tiga potongan cepat, tiap potongan satu keunggulan: sol anti-licin, bahan cepat kering, ringan.</p>
+            <p><strong>Penutup (22–30 detik):</strong> Produk dan harga di layar, CTA “Cek di keranjang kuning”.</p>
+          </template>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== TENTANG ===================== -->
+    <section class="about wrap" id="tentang" aria-labelledby="judul-tentang">
+      <div>
+        <h2 id="judul-tentang">Tentang saya</h2>
+        <figure class="about-photo">
+          <img src="assets/img/foto-profil.jpg" alt="Foto Raka Pratama" loading="lazy">
+        </figure>
+      </div>
+      <div class="about-text">
+          <p>Saya mulai mengedit video saat kuliah, lalu dua tahun terakhir bekerja freelance untuk UMKM, kreator, dan brand lokal. Saya paling senang mengerjakan konten yang harus menjelaskan sesuatu dengan cepat tanpa terasa seperti iklan.</p>
+          <p>Sekarang saya ingin bergabung dengan tim kreatif di agency, supaya bisa belajar dari proyek yang lebih besar dan bekerja bareng desainer dan penulis.</p>
+        <h3>Tools dan keahlian</h3>
+        <ul class="tools">
+            <li>Premiere Pro</li>
+            <li>After Effects</li>
+            <li>DaVinci Resolve</li>
+            <li>CapCut</li>
+            <li>Color grading</li>
+            <li>Sound design</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== KONTAK ===================== -->
+    <section class="contact wrap" id="kontak" aria-labelledby="judul-kontak">
+      <h2 id="judul-kontak">Mari kerja bareng</h2>
+      <a class="contact-email" href="mailto:raka@email.com">raka@email.com</a>
+      <ul class="contact-links">
+        <li><a href="https://wa.me/6281234567890">WhatsApp</a></li>
+        <li><a href="https://www.linkedin.com/in/username">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/username">Instagram</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="foot wrap">
+    <p>© 2026 Raka Pratama</p>
+  </footer>
+
+  <!-- Jendela untuk menampilkan video, gambar, atau tulisan -->
+  <dialog class="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-bar">
+      <h2 id="viewer-title"></h2>
+      <button class="viewer-close" aria-label="Tutup">Tutup</button>
+    </div>
+    <div class="viewer-body"></div>
+  </dialog>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
