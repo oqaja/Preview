@@ -97,6 +97,33 @@ h1, h2, .contact-email { font-family: "Young Serif", Georgia, serif; font-weight
 .contact-links a { color: var(--muted); }
 .foot { margin: 8px 0 0; text-align: center; color: var(--muted); font-size: 0.85rem; }
 
+/* ---------- Laptop: profil menempel di kiri, karya 2 kolom di kanan ---------- */
+@media (min-width: 960px) {
+  .column {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    column-gap: clamp(40px, 5vw, 72px);
+    row-gap: 20px;
+    align-items: start;
+  }
+  .profile {
+    grid-column: 1; grid-row: 1 / span 5;
+    position: sticky; top: 40px;
+    padding: 28px 24px; border-radius: 28px; background: var(--surface);
+  }
+  .profile .status { background: var(--bg); }
+  .profile .link { background: var(--bg); }
+  .profile .link-main { background: var(--accent); }
+  .column > :not(.profile) { grid-column: 2; }
+  .card-section { padding-top: 0; }
+  .section-head { flex-direction: row; justify-content: space-between; align-items: center; text-align: left; }
+  .filters { justify-content: flex-end; }
+  .works { display: block; columns: 2; column-gap: 16px; }
+  .work { break-inside: avoid; margin-bottom: 16px; }
+  .foot { text-align: left; }
+}
+
 /* ---------- Dasar bersama (tidak perlu diubah) ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
